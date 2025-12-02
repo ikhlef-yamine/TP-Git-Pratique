@@ -32,7 +32,7 @@ un message de conflit qui apparait
 
 <img width="682" height="73" alt="merge_B" src="https://github.com/user-attachments/assets/182a4304-08db-4eff-aeee-1a12d2ecaa19" />
 
-observation d'un conflit et ca resolution 
+observation d'un conflit et sa resolution 
 
 <img width="953" height="364" alt="resolution du conflit" src="https://github.com/user-attachments/assets/aadcb66d-f978-44c7-93c5-02d1370a9838" />
 
