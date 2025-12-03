@@ -1,0 +1,15 @@
+[
+  {
+    "id": 1,
+    "nom": "Ordinateurs Portables"
+  },
+  {
+    "id": 2,
+    "nom": "Smartphones"
+  },
+  {
+    "id": 3,
+    "nom": "Accessoires"
+  }
+]
+
