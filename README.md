@@ -10,7 +10,9 @@ Vérifier l’état du dépôt
 Création d'une première branche conflit-a et faire un Commit "Modification version A"
 
 
-<img width="847" height="125" alt="creation_branch_conflit_A" src="https://github.com/user-attachments/assets/890d4b1a-7f8a-4569-9536-2961a711e989" />
+<img width="1615" height="249" alt="creation_branch_conflit_A" src="https://github.com/user-attachments/assets/3ad2cfe0-d0bd-4b78-b5be-0e1aa15f4f5b" />
+
+
 
 Retour sur main
 
@@ -19,7 +21,10 @@ Retour sur main
 
 Création d'une deuxième branche conflit-b et faire un Commit "Modification version B" 
 
-<img width="879" height="211" alt="conflit_B" src="https://github.com/user-attachments/assets/20e27a12-58ba-472d-8162-af9c2717d045" />
+<img width="1638" height="421" alt="conflit_B" src="https://github.com/user-attachments/assets/0804a41b-0121-4990-a3e6-3f4726067301" />
+
+
+
 
 Fusionner la première branche A dans main
 
