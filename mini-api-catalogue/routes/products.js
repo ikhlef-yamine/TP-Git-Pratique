@@ -1,31 +1,32 @@
-[
-  {
-    "id": "P001",
-    "nom": "PC Portable Ultra Fin",
-    "prix": 1200.00,
-    "description": "Un ordinateur portable puissant et léger.",
-    "categorie_id": 1
-  },
-  {
-    "id": "P002",
-    "nom": "Smartphone Dernier Cri",
-    "prix": 899.99,
-    "description": "Capturez des photos incroyables avec ce téléphone.",
-    "categorie_id": 2
-  },
-  {
-    "id": "P003",
-    "nom": "Clavier Ergonomique",
-    "prix": 75.50,
-    "description": "Clavier confortable pour une utilisation prolongée.",
-    "categorie_id": 3
-  },
-  {
-    "id": "P004",
-    "nom": "Batterie Externe 10000mAh",
-    "prix": 25.00,
-    "description": "Charge rapide pour vos appareils lors de vos déplacements.",
-    "categorie_id": 3
-  }
-]
+// routes/products.js (Exemple)
 
+// ... autres imports et données
+const products = require('../data/products.json'); 
+
+// Route POST pour créer un nouveau produit
+router.post('/', (req, res) => {
+    // 1. Logique de validation et de création du produit (omise ici)
+    const newProduct = req.body;
+    newProduct.id = Date.now(); // Simulation d'un ID
+    products.push(newProduct);
+    
+    // 2. CORRECTION : Utilisation du code 201 Created pour une création réussie
+    res.status(201).send(newProduct); 
+});
+
+// Route DELETE pour supprimer un produit par ID
+router.delete('/:id', (req, res) => {
+    // 1. Logique pour trouver et supprimer le produit (omise ici)
+    const index = products.findIndex(p => p.id == req.params.id);
+
+    if (index === -1) {
+        return res.status(404).send({ message: 'Produit non trouvé' });
+    }
+
+    products.splice(index, 1);
+
+    // 2. CORRECTION : Utilisation du code 204 No Content pour une suppression réussie
+    res.status(204).end(); 
+});
+
+// ... autres routes
