@@ -39,7 +39,7 @@ jobs:
           cd mini-api-catalogue
           node server.js &
           sleep 3
-          curl -f http://localhost:3000/products
+          curl -f http://localhost:3000/api/products
 
       - name: Stop server
         run: |
