@@ -16,21 +16,23 @@ jobs:
     - name: Setup Node.js (Backend & Frontend)
       uses: actions/setup-node@v4
       with:
-        node-version: '20' # Version LTS stable de Node.js
+        node-version: '20'
 
     - name: Installation et Test du Backend (API Catalogue)
-      working-directory: ./mini-api-catalogue
+      # Chemin relatif simple
+      working-directory: mini-api-catalogue 
       run: |
         npm install
         # Les tests unitaires (s'ils existent) seraient exécutés ici, ex: npm test
 
     - name: Installation et Build du Frontend (React Client)
-      working-directory: ./react-client
+      # Chemin relatif simple
+      working-directory: react-client 
       run: |
         npm install
-        # Exécute la commande de build de Vite pour vérifier que le projet compile
         npm run build
         # Les tests unitaires (s'ils existent) seraient exécutés ici, ex: npm test
+
 
 
 
