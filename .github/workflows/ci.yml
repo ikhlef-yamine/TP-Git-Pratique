@@ -12,6 +12,9 @@ jobs:
 
     steps:
     - uses: actions/checkout@v4
+      with:
+        # Force le checkout à la racine du workspace du runner (pas de sous-dossier TP-Git-Pratique supplémentaire)
+        path: ./ 
 
     - name: Setup Node.js (Backend & Frontend)
       uses: actions/setup-node@v4
@@ -19,19 +22,20 @@ jobs:
         node-version: '20'
 
     - name: Installation et Test du Backend (API Catalogue)
-      # Chemin relatif simple
+      # Maintenant, ce chemin simple fonctionnera car 'mini-api-catalogue' est à la racine
       working-directory: mini-api-catalogue 
       run: |
         npm install
-        # Les tests unitaires (s'ils existent) seraient exécutés ici, ex: npm test
 
     - name: Installation et Build du Frontend (React Client)
-      # Chemin relatif simple
+      # Ce chemin simple fonctionnera aussi
       working-directory: react-client 
       run: |
         npm install
         npm run build
-        # Les tests unitaires (s'ils existent) seraient exécutés ici, ex: npm test
+
+
+
 
 
 
