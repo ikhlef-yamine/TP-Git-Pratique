@@ -1,0 +1,36 @@
+name: CI Full-Stack Application
+
+on:
+  push:
+    branches: [ "main" ]
+  pull_request:
+    branches: [ "main" ]
+
+jobs:
+  build-and-test:
+    runs-on: ubuntu-latest
+
+    steps:
+    - uses: actions/checkout@v4
+      with:
+        submodules: true
+
+    - name: Setup Node.js
+      uses: actions/setup-node@v4
+      with:
+        node-version: '20' # Version LTS stable de Node.js
+
+    - name: Test Backend (API Catalogue)
+      run: |
+        cd mini-api-catalogue
+        npm install
+        # Les tests unitaires seraient exécutés ici (ex: npm test)
+
+    - name: Test Frontend (React Client)
+      run: |
+        cd react-client
+        npm install
+        # Exécute la commande de build de Vite pour vérifier que le projet compile
+        npm run build
+        # Les tests unitaires seraient exécutés ici (ex: npm test)
+

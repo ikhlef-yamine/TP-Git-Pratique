@@ -1,1 +1,5 @@
-"node_modules/" 
+# Dépendances Node.js
+node_modules/
+
+# Base de données SQLite générée automatiquement
+database.sqlite
