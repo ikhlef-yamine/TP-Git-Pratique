@@ -12,26 +12,25 @@ jobs:
 
     steps:
     - uses: actions/checkout@v4
-      with:
-        submodules: true
 
-    - name: Setup Node.js
+    - name: Setup Node.js (Backend & Frontend)
       uses: actions/setup-node@v4
       with:
         node-version: '20' # Version LTS stable de Node.js
 
-    - name: Test Backend (API Catalogue)
+    - name: Installation et Test du Backend (API Catalogue)
+      working-directory: ./mini-api-catalogue
       run: |
-        cd mini-api-catalogue
         npm install
-        # Les tests unitaires seraient exécutés ici (ex: npm test)
+        # Les tests unitaires (s'ils existent) seraient exécutés ici, ex: npm test
 
-    - name: Test Frontend (React Client)
+    - name: Installation et Build du Frontend (React Client)
+      working-directory: ./react-client
       run: |
-        cd react-client
         npm install
         # Exécute la commande de build de Vite pour vérifier que le projet compile
         npm run build
-        # Les tests unitaires seraient exécutés ici (ex: npm test)
+        # Les tests unitaires (s'ils existent) seraient exécutés ici, ex: npm test
+
 
 
