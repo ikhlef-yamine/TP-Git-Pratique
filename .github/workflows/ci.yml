@@ -13,7 +13,7 @@ jobs:
     steps:
     - uses: actions/checkout@v4
       with:
-        # Assurez-vous que le code est au niveau le plus élevé du workspace
+        # Assure le clonage à la racine du workspace du runner
         path: ./
 
     - name: Setup Node.js (Backend & Frontend)
@@ -33,6 +33,7 @@ jobs:
       run: |
         npm install
         npm run build
+
 
 
 
