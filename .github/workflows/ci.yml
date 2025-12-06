@@ -34,3 +34,49 @@ jobs:
         npm run build
         # Les tests unitaires seraient exécutés ici (ex: npm test)
 
+name: CI - Mini API Catalogue
+
+on:
+  push:
+    branches: [ "main" ]
+  pull_request:
+    branches: [ "main" ]
+
+jobs:
+  build-and-test:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: "18"
+
+      - name: Install dependencies
+        run: |
+          cd mini-api-catalogue
+          npm install
+
+      - name: Run tests
+        run: |
+          cd mini-api-catalogue
+          npm test
+
+      - name: Lint (optionnel si eslint installé)
+        run: |
+          cd mini-api-catalogue
+          npm run lint || echo "No linter configured"
+
+      - name: Start API to check it builds
+        run: |
+          cd mini-api-catalogue
+          node server.js &
+          sleep 3
+          curl -f http://localhost:3000/api/products
+
+      - name: Stop server
+        run: |
+          pkill node || true
